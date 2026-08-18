@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './ListGroup.css'
+import styles from './ListGroup.module.css'
 
 interface Props {
   items: string[]
@@ -41,7 +41,7 @@ function ListGroup({ items, heading }: Props) {
 
       {items.length === 0 && <p>No item found</p>}
 
-      <ul className="list-group">
+      <ul className={[styles.listGroup, styles.container].join(' ')}>
         {items.map((item, index) => (
           // onClick={() => console.log(item, index)
           <li
